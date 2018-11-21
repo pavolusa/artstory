@@ -1,0 +1,3 @@
+sudo apt-get install imagemagick
+
+convert -resize 4896X3672  source.png dest.jpg

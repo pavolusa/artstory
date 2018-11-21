@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <title>Art Story</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="{% static '/img/logo2.png' %}" rel="icon">
+  <link href="{% static '/img/logo2.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,300,700|EB+Garamond" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{% static '/lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+
+</head>
+
+<body data-spy="scroll" data-offset="0" data-target="#theMenu">
+
+  <!-- Menu -->
+  <nav class="menu" id="theMenu">
+	<div class="menu-wrap">
+        <h1 class="logo"><a href="index.html#home">ArtStory</a></h1>
+        <i class="fa fa-times-circle menu-close"></i>
+        <a href="#home" class="smoothscroll">Home</a>
+        <a href="#artpiece" class="smoothscroll">Art Pieces</a>
+        <a href="#artpiece" class="smoothscroll">&nbsp&nbsp&nbsp&nbspFilm</a>
+        <a href="#artpiece" class="smoothscroll">&nbsp&nbsp&nbsp&nbspPhotography</a>
+        <a href="#artpiece" class="smoothscroll">&nbsp&nbsp&nbsp&nbspStage</a>
+        <a href="#artpiece" class="smoothscroll">&nbsp&nbsp&nbsp&nbspKirigami</a>
+        <a href="#artpiece" class="smoothscroll">&nbsp&nbsp&nbsp&nbspPoem</a>
+        <a href="#artpiece" class="smoothscroll">&nbsp&nbsp&nbsp&nbspMusic</a>
+        <a href="#artpiece" class="smoothscroll">&nbsp&nbsp&nbsp&nbspArchitecture</a>
+        <a href="#artpiece" class="smoothscroll">&nbsp&nbsp&nbsp&nbspSculpture</a>
+        <a href="#artpiece" class="smoothscroll">&nbsp&nbsp&nbsp&nbspPainting</a>
+        <a href="#quotation" class="smoothscroll">Quotations</a>
+        <a href="#contact" class="smoothscroll">Contact</a>
+        <a href="https://www.facebook.com/tran.phongvu.948"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-dribbble"></i></a>
+        <a href="#contact"><i class="fa fa-envelope"></i></a>
+	</div>
+
+	<!-- Menu button -->
+	<div id="menuToggle"><i class="fa fa-bars"></i></div>
+  </nav>
+
+  <!-- ========== HEADER SECTION ========== -->
+  <section id="home" name="home"></section>
+  <div id="headerwrap">
+	<div class="container">
+	  <div class="logo">
+		<img src="{% static '/img/logo_art_story.png' %}">
+	  </div>
+	  <br>
+	  <div class="row">
+		<h1>ART STORY</h1>
+		<br>
+		<h3>Bonjour, Je m'appelle Phong Vu. J'aime l'Art.</h3>
+		<br>
+		<br>
+		<div class="col-lg-6 col-lg-offset-3">
+		</div>
+	  </div>
+	</div>
+	<!-- /container -->
+  </div>
+  <!-- /headerwrap -->
+
+  <!-- ========== CAROUSEL SECTION ========== -->
+  <section id="artpiece" name="artpiece"></section>
+  <div id="f">
+	<div class="container">
+	  <div class="row centered">
+		<h3>MOST FAMOUS ART PIECES</h3>
+        <h3>& STORIES BEHIND</h3>
+		<p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i class="icon icon-circle"></i></p>
+			<div>
+                {% for type in type_objs %}
+                        <div class="col-xs-4">
+                            <img class="img-responsive" src="/media/{{ type.image }}" alt="">
+                            <i>{{ type.name }}</i>
+                        </div>
+                {% endfor %}
+			</div>
+		<!--<div class="col-lg-6 col-lg-offset-3" style="margin-top: 30px">
+		  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">-->
+			<!-- Wrapper for slides -->
+			<!--<div class="carousel-inner">
+                <div class="item active centered">
+                    <img class="img-responsive" src="{% static '/img/i1.jpg' %}" alt="">
+                </div>
+                <div class="item centered">
+                    <img class="img-responsive" src="{% static '/img/i2.jpg' %}" alt="">
+                </div>
+                <div class="item centered">
+                    <img class="img-responsive" src="{% static '/img/i3.jpg' %}" alt="">
+                </div>
+			</div>
+			<br>
+			<br>
+			<ol class="carousel-indicators">
+			  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			</ol>
+		  </div>
+		</div>-->
+		<!-- col-lg-8 -->
+	  </div>
+	  <!-- row -->
+	</div>
+	<!-- container -->
+  </div>
+  <!-- f -->
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="quotation" name="quotation"></section>
+  <div id="f">
+	<div class="container">
+	  <div class="row">
+		<h3>QUOTATIONS</h3>
+		<p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i class="icon icon-circle"></i></p>
+
+		<!-- INTRO INFORMATIO-->
+		<div>
+		  <p>All art is but imitation of nature. ~ Seneca</p>
+		  <p>Love of beauty is taste. The creation of beauty is art. ~ Ralph Waldo Emerso</p>
+		  <p>In art as in love, instinct is enough. ~ Anatole France </p>
+		  <p>You use a glass mirror to see your face; you use works of art to see your soul. ~ George Bernard Shaw</p>
+		  <p><button type="button" class="btn btn-warning">Your Beautiful Soul</button></p>
+		</div>
+	  </div>
+	</div>
+	<!-- /container -->
+  </div>
+  <!-- /f -->
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact" name="contact"></section>
+  <div id="f">
+	<div class="container">
+        <div class="col-xs-4">
+            <img src="{% static '/img/logo.png' %}">
+             <br/> <br/>
+            <p>Chuyen trang phan tich nghe thuat<br/>Nhung cau chuyen ke, danh gia va nhin nhan</p>
+        </div>
+        <div class="col-xs-4">
+    		<h3>CONTACT ME</h3>
+    		<p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i class="icon icon-circle"></i></p>
+    		<div>
+                <p>Phong Vu<br/>Iris Garden, CT3<br/>Ha Noi, Viet Nam<br/>+84 2 156 720<br/>tranphongvu0608@gmail.com</p>
+    		</div>
+        </div>
+        <div class="col-xs-4">
+            <h3>AUTHORS</h3>
+            <br/><br/>
+            <a>Leonardo da vinci</a><br/>
+            <a>Balzac</a><br/>
+            <a>Betthoven</a><br/>
+            <a>Luu Quang Vu</a><br/>
+            <a>Xuan Dieu</a><br/>
+            <a>Phong Vu</a><br/>
+            <a>Mozart</a>
+        </div>
+
+	  <!--<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+		  <form class="contact-form php-mail-form" role="form" action="contactform/contactform.php" method="POST">
+
+			<div class="form-group">
+			  <label for="contact-name">Your Name</label>
+			  <input type="name" name="name" class="form-control" id="contact-name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" >
+			  <div class="validate"></div>
+			</div>
+			<div class="form-group">
+			  <label for="contact-email">Your Email</label>
+			  <input type="email" name="email" class="form-control" id="contact-email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+			  <div class="validate"></div>
+			</div>
+			<div class="form-group">
+			  <label for="contact-subject">Subject</label>
+			  <input type="text" name="subject" class="form-control" id="contact-subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+			  <div class="validate"></div>
+			</div>
+
+			<div class="form-group">
+			  <label for="contact-message">Your Message</label>
+			  <textarea class="form-control" name="message" id="contact-message" placeholder="Your Message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
+			  <div class="validate"></div>
+			</div>
+
+			<div class="loading"></div>
+			<div class="error-message"></div>
+			<div class="sent-message">Your message has been sent. Thank you!</div>
+
+			<div class="form-send">
+			  <button type="submit" class="btn btn-large">Send Message</button>
+			</div>
+		  </form>
+		</div>
+	  </div>-->
+	</div>
+  </div>
+  <div id="copyrights">
+	<div class="container">
+	  <p>
+		&copy; <strong>2018 ArtStory.vn </strong>. All Rights Reserved
+	  </p>
+	</div>
+  </div>
+  {% load static %}
+  <!-- JavaScript Libraries -->
+  <script src="{% static '/lib/jquery/jquery.min.js' %}"></script>
+  <script src="{% static '/lib/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static '/lib/php-mail-form/validate.js' %}"></script>
+  <script src="{% static '/lib/easing/easing.min.js' %}"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="{% static '/js/main.js' %}"></script>
+
+</body>
+</html>
