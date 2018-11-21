@@ -1,0 +1,4 @@
+STATICFILES_DIRS = [
+    '/code/artstory/templates/artstory',
+]
+
