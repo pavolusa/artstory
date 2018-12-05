@@ -4,7 +4,7 @@ docker-compose run web django-admin.py startproject code_artstory .
 docker-compose run web django-admin.py startapp artstory
 
 cd artstory/
-rm admin.py models.py views.py
+rm -rf admin.py models.py views.py
 cd - 
 
 cp ./src/artstory/admin.py ./artstory/
@@ -13,7 +13,7 @@ cp ./src/artstory/views.py ./artstory/
 cp -r ./src/artstory/templates/ ./artstory/
  
 cd code_artstory
-rm urls.py
+rm -rf urls.py
 
 num_line_setting=$(grep -n -w "INSTALLED_APPS" settings.py | awk -F ':' '{print $1}')
 num_line_setting=$((num_line_setting+1))
